@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::Captcha;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 use base 'App::ZofCMS::Plugin::Base';
 use GD::SecurityImage;
 
@@ -274,6 +274,18 @@ of the text (and particles if they are on). B<Defaults to:> C<#895533>
 
 B<Optional>. Takes 6-digit hex RGB notation as a value. Specifies the color
 of cryptocrap lines. B<Defaults to:> C<#000000>
+
+=head1 OUTPUT
+
+    $t->{d}{session}{captcha} = 'random_number';
+
+    $t->{t}{plug_captcha_error} = 'error message';
+
+Plugin will put the captcha string into C<< $t->{d}{session}{captcha} >> where
+C<$t> is ZofCMS Template hashref. Currently there is no way to change that.
+
+If you're saving captcha to a file, possible I/O error message will be put into
+C<< $t->{t}{plug_captcha_error} >> where C<$t> is ZofCMS Template hashref.
 
 =head1 AUTHOR
 
