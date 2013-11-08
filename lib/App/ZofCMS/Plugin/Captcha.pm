@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::Captcha;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 use base 'App::ZofCMS::Plugin::Base';
 use GD::SecurityImage;
 
@@ -63,6 +63,8 @@ sub _do {
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 

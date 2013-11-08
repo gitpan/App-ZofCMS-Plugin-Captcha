@@ -16,7 +16,9 @@ my $builder = Module::Build->new(
     requires => {
         'App::ZofCMS::Plugin::Base' => 0.0105,
         'GD::SecurityImage'         => 1.70,
+        perl                        => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'App-ZofCMS-Plugin-Captcha-*' ],
     create_makefile_pl => 'traditional',
 );
